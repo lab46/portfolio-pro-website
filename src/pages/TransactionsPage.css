@@ -1,0 +1,689 @@
+.transactions-page {
+  padding: 2rem 0;
+}
+
+/* Reassignment Controls */
+.reassignment-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(100, 108, 255, 0.05);
+  border-radius: 6px;
+  border: 1px solid rgba(100, 108, 255, 0.2);
+}
+
+.btn-sm {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.selected-count {
+  font-weight: 600;
+  color: #646cff;
+  font-size: 0.95rem;
+}
+
+.entity-selector {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(100, 108, 255, 0.3);
+  border-radius: 6px;
+  background: white;
+  font-size: 0.9rem;
+  min-width: 200px;
+  color: #333;
+  font-weight: 500;
+}
+
+.entity-selector option {
+  color: #333;
+  padding: 0.5rem;
+}
+
+/* 2-Column Layout */
+.transactions-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+  min-height: 600px;
+}
+
+/* Left Sidebar - Legal Entities */
+.legal-entities-sidebar {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid rgba(100, 108, 255, 0.2);
+  overflow: hidden;
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+  max-height: calc(100vh - 150px);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(135deg, rgba(100, 108, 255, 0.1) 0%, rgba(100, 108, 255, 0.05) 100%);
+  border-bottom: 1px solid rgba(100, 108, 255, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sidebar-header-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.entity-count {
+  background: #646cff;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.delete-all-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-all-btn:hover:not(:disabled) {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+.delete-all-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.delete-all-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.legal-entities-list {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.entity-item {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(100, 108, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.entity-item:hover {
+  background: rgba(100, 108, 255, 0.05);
+}
+
+.entity-item.selected {
+  background: rgba(100, 108, 255, 0.15);
+  border-left: 4px solid #646cff;
+  padding-left: calc(1.5rem - 4px);
+}
+
+.entity-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.entity-name {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.entity-type {
+  font-size: 0.8rem;
+  color: #666;
+  text-transform: capitalize;
+}
+
+.entity-stats {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(100, 108, 255, 0.15);
+}
+
+.entity-stats span {
+  font-size: 0.75rem;
+  color: #646cff;
+  background: rgba(100, 108, 255, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* Right Content Area - Transactions */
+.transactions-content {
+  position: relative;
+  min-height: 400px;
+}
+
+.empty-state-card {
+  background: white;
+  border-radius: 8px;
+  border: 2px dashed rgba(100, 108, 255, 0.3);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-state-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.empty-state-card p {
+  margin: 0;
+  color: #666;
+  font-size: 1rem;
+}
+
+.empty-state {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #999;
+}
+
+.empty-state p {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+.empty-state small {
+  font-size: 0.8rem;
+  color: #bbb;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .transactions-layout {
+    grid-template-columns: 280px 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .transactions-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .legal-entities-sidebar {
+    position: relative;
+    top: 0;
+    max-height: 300px;
+  }
+
+  .sidebar-header h3 {
+    font-size: 1rem;
+  }
+}
+
+.filters-section {
+  margin-bottom: 2rem;
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+}
+
+.filter-header:hover {
+  opacity: 0.8;
+}
+
+.filter-header h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.collapse-toggle {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  color: var(--text-color);
+  transition: transform 0.2s;
+}
+
+.filters-section h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.active-filters {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(100, 108, 255, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.active-filters > span:first-child {
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  background-color: rgba(100, 108, 255, 0.1);
+  color: #646cff;
+  border-radius: 16px;
+  font-size: 0.9rem;
+}
+
+.filter-chip button {
+  background: none;
+  border: none;
+  color: #646cff;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.filter-chip button:hover {
+  background-color: rgba(100, 108, 255, 0.2);
+}
+
+.transactions-controls {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: rgba(100, 108, 255, 0.05);
+  border-radius: 8px;
+}
+
+.selection-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.pagination-info {
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.select-all-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.select-all-checkbox input[type="checkbox"] {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+.count-info {
+  color: #666;
+}
+
+/* Pagination Footer */
+.pagination-footer {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: rgba(100, 108, 255, 0.05);
+  border-radius: 8px;
+  gap: 1rem;
+}
+
+.pagination-info-bottom {
+  font-size: 0.95rem;
+  justify-self: start;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.page-info {
+  font-weight: 600;
+}
+
+.page-size-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-self: end;
+}
+
+.page-size-selector label {
+  font-size: 0.95rem;
+}
+
+.page-size-selector select {
+  padding: 0.5rem;
+  border: 1px solid rgba(100, 108, 255, 0.3);
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.transactions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Compact Single-Line Transaction Rows */
+.transaction-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: white;
+  border: 1px solid rgba(100, 108, 255, 0.2);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  transition: background-color 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.transaction-checkbox {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.transaction-row:hover {
+  background-color: rgba(100, 108, 255, 0.05);
+  box-shadow: 0 2px 4px rgba(100, 108, 255, 0.15);
+  border-color: rgba(100, 108, 255, 0.3);
+}
+
+.transaction-date {
+  flex-shrink: 0;
+  width: 85px;
+  color: #666;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.transaction-description {
+  flex: 1 1 200px;
+  font-weight: 600;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  min-width: 150px;
+  max-width: 100%;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Category Field - Editable */
+.transaction-category-field {
+  flex-shrink: 0;
+  min-width: 150px;
+}
+
+.category-display {
+  cursor: pointer;
+  padding: 0.25rem 0.6rem;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.category-display:hover {
+  background-color: rgba(100, 108, 255, 0.05);
+}
+
+.transaction-category {
+  color: #646cff;
+  background-color: rgba(100, 108, 255, 0.1);
+  padding: 0.25rem 0.6rem;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.category-placeholder {
+  color: #999;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.category-input-wrapper {
+  display: inline-block;
+}
+
+.category-input {
+  padding: 0.35rem 0.6rem;
+  border: 2px solid #646cff;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  min-width: 150px;
+  outline: none;
+  background: white;
+  color: #333;
+  transition: all 0.2s;
+}
+
+.category-input:focus {
+  border-color: #535bf2;
+  box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.1);
+}
+
+.category-input::placeholder {
+  color: #999;
+  font-weight: 500;
+}
+
+.transaction-account {
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.transaction-assets {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  color: #888;
+  font-style: italic;
+}
+
+.transaction-status {
+  flex-shrink: 0;
+  padding: 0.25rem 0.6rem;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.transaction-status.status-pending {
+  background-color: rgba(255, 152, 0, 0.1);
+  color: #ff9800;
+}
+
+.transaction-status.status-categorized {
+  background-color: rgba(33, 150, 243, 0.1);
+  color: #2196f3;
+}
+
+.transaction-status.status-verified {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: #4caf50;
+}
+
+.transaction-status.status-rejected {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #f44336;
+}
+
+.transaction-amount {
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: right;
+  min-width: 90px;
+}
+
+.transaction-amount.positive {
+  color: #4ade80;
+}
+
+.transaction-amount.negative {
+  color: #ef4444;
+}
+
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.page-info {
+  font-weight: 600;
+}
+
+@media (max-width: 1200px) {
+  .transaction-row {
+    gap: 0.5rem;
+  }
+
+  .transaction-description {
+    flex: 1 1 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .transactions-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .legal-entities-sidebar {
+    position: static;
+    max-height: none;
+  }
+
+  .filters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .transaction-row {
+    gap: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .transaction-description {
+    flex-basis: 100%;
+    order: -1;
+  }
+
+  .transaction-date {
+    width: auto;
+  }
+
+  .transactions-controls {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .pagination-controls {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,20 @@
+.not-found {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.not-found h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #646cff;
+}
+
+.not-found p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.not-found a {
+  text-decoration: none;
+}

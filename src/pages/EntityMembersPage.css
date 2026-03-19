@@ -1,0 +1,100 @@
+.entity-members-page {
+  padding: 2rem 0;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-header > div {
+  margin-bottom: 1rem;
+}
+
+.page-header h1 {
+  margin: 1rem 0 0.5rem 0;
+  color: white;
+}
+
+.entity-type-badge {
+  margin: 0;
+}
+
+.members-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.members-table th,
+.members-table td {
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.members-table th {
+  background: #f5f5f5;
+  font-weight: 600;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.members-table td {
+  font-size: 0.95rem;
+}
+
+.members-table tbody tr:hover {
+  background: #f9f9f9;
+}
+
+.member-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.notes-cell {
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #666;
+}
+
+.role-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.role-badge.role-member {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.role-badge.role-beneficiary {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.role-badge.role-director {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.role-badge.role-shareholder {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+}
+
+.empty-state p {
+  margin-bottom: 1.5rem;
+  color: #666;
+  font-size: 1.1rem;
+}

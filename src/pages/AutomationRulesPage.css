@@ -1,0 +1,565 @@
+.automation-rules-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #333;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.rules-info {
+  background: rgba(100, 108, 255, 0.05);
+  border-left: 4px solid #646cff;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 4px;
+}
+
+.rules-info p {
+  margin: 0;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Rule Form */
+.rule-form-card {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rule-form-card h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #646cff;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: auto;
+  cursor: pointer;
+}
+
+/* Patterns Section */
+.patterns-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.patterns-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.patterns-header label {
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.add-pattern-button {
+  background: #4ade80;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.add-pattern-button:hover {
+  background: #22c55e;
+}
+
+.pattern-card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.pattern-row {
+  display: grid;
+  grid-template-columns: 150px 1fr auto auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.pattern-row select,
+.pattern-row input[type="text"],
+.pattern-row input[type="number"] {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.remove-pattern-button {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.remove-pattern-button:hover {
+  background: #dc2626;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.primary-button {
+  background: #646cff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.primary-button:hover {
+  background: #535ac8;
+}
+
+.primary-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.secondary-button {
+  background: transparent;
+  color: #646cff;
+  border: 1px solid #646cff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.secondary-button:hover {
+  background: rgba(100, 108, 255, 0.1);
+}
+
+.secondary-button:disabled {
+  border-color: #ccc;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Rules List */
+.rules-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rule-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s;
+}
+
+.rule-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.rule-card.disabled {
+  opacity: 0.6;
+}
+
+.rule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.rule-status {
+  display: flex;
+  align-items: center;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status-badge.enabled {
+  background: #4ade80;
+  color: white;
+}
+
+.status-badge.disabled {
+  background: #999;
+  color: white;
+}
+
+.rule-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.icon-button {
+  background: transparent;
+  border: 1px solid #ddd;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.icon-button:hover {
+  background: #f0f0f0;
+  border-color: #999;
+}
+
+.rule-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.rule-info {
+  display: flex;
+  gap: 0.5rem;
+  color: #666;
+}
+
+.rule-info strong {
+  color: #333;
+}
+
+.patterns-display {
+  margin-top: 0.5rem;
+}
+
+.patterns-display strong {
+  color: #333;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.patterns-display ul {
+  list-style: none;
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.patterns-display li {
+  padding: 0.5rem 0;
+  color: #666;
+}
+
+.pattern-field {
+  display: inline-block;
+  background: #646cff;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.patterns-display code {
+  background: #f5f5f5;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  color: #333;
+}
+
+/* Loading & Empty States */
+.loading,
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #999;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .automation-rules-page {
+    padding: 1rem;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .header-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .header-actions button {
+    width: 100%;
+  }
+
+  .pattern-row {
+    grid-template-columns: 1fr;
+  }
+
+  .rule-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .automation-rules-page {
+    color: #e0e0e0;
+  }
+
+  .page-header h1 {
+    color: #fff;
+  }
+
+  .rules-info {
+    background: rgba(100, 108, 255, 0.1);
+  }
+
+  .rule-form-card,
+  .rule-card {
+    background: #2a2a2a;
+  }
+
+  .form-group label,
+  .patterns-header label,
+  .rule-info strong,
+  .patterns-display strong {
+    color: #e0e0e0;
+  }
+
+  .form-group input,
+  .form-group select,
+  .pattern-row input,
+  .pattern-row select {
+    background: #1a1a1a;
+    border-color: #444;
+    color: #e0e0e0;
+  }
+
+  .pattern-card {
+    background: #1a1a1a;
+    border-color: #444;
+  }
+
+  .patterns-display code {
+    background: #1a1a1a;
+    color: #e0e0e0;
+  }
+
+  .icon-button {
+    border-color: #444;
+    color: #e0e0e0;
+  }
+
+  .icon-button:hover {
+    background: #333;
+    border-color: #666;
+  }
+
+  .transaction-type-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
+  }
+
+  .transaction-type-badge.income {
+    background: #e8f5e9;
+    color: #2e7d32;
+  }
+
+  .transaction-type-badge.expense {
+    background: #ffebee;
+    color: #c62828;
+  }
+
+  .transaction-type-badge.internal_transfer {
+    background: #e3f2fd;
+    color: #1976d2;
+  }
+
+  .transaction-type-badge.investment {
+    background: #f3e5f5;
+    color: #7b1fa2;
+  }
+
+  .transaction-type-badge.withdrawal {
+    background: #fff3e0;
+    color: #e65100;
+  }
+
+  .operator-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .operator-badge.AND {
+    background: #e8f5e9;
+    color: #2e7d32;
+  }
+
+  .operator-badge.OR {
+    background: #e3f2fd;
+    color: #1976d2;
+  }
+
+  .form-hint {
+    display: block;
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.25rem;
+    font-style: italic;
+  }
+
+  /* Pattern Operator Selector (in form) */
+  .pattern-operator {
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    background: rgba(100, 108, 255, 0.05);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid rgba(100, 108, 255, 0.2);
+  }
+
+  .operator-select {
+    padding: 0.5rem 1rem;
+    border: 2px solid #646cff;
+    border-radius: 4px;
+    font-weight: 600;
+    background: white;
+    color: #646cff;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 100px;
+  }
+
+  .operator-select:hover {
+    background: #646cff;
+    color: white;
+  }
+
+  .operator-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.2);
+  }
+
+  .operator-hint {
+    color: #666;
+    font-size: 0.85rem;
+    font-style: italic;
+    flex: 1;
+  }
+
+  /* Pattern Operator Display (in rules list) */
+  .pattern-operator-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
+  }
+}
+

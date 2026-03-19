@@ -1,0 +1,156 @@
+.bank-accounts-page {
+  padding: 2rem 0;
+}
+
+.filter-notice {
+  background-color: #e3f2fd;
+  color: #1976d2;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #1976d2;
+  font-weight: 500;
+}
+
+.bank-name {
+  font-weight: 500;
+}
+
+.account-nickname {
+  font-style: italic;
+  color: #646cff;
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+.account-type {
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.account-status {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.account-status.active {
+  color: #4caf50;
+}
+
+.account-status.inactive {
+  color: #9e9e9e;
+}
+
+.accounts-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.account-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+  padding: 1rem;
+}
+
+.account-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(100, 108, 255, 0.15);
+}
+
+.account-compact-layout {
+  display: grid;
+  grid-template-columns: 2fr 2fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.account-main-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.account-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.account-title-row h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.account-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.account-meta .separator {
+  opacity: 0.3;
+}
+
+.account-details-inline {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.detail-item .label {
+  opacity: 0.6;
+  font-size: 0.85rem;
+}
+
+.account-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.account-notes {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(100, 108, 255, 0.1);
+  font-size: 0.9rem;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+.balance-row strong {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.balance-row .positive {
+  color: #4caf50;
+}
+
+.balance-row .negative {
+  color: #ff4444;
+}
+
+@media (max-width: 768px) {
+  .account-compact-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .account-actions {
+    justify-content: flex-start;
+  }
+  
+  .detail-item {
+    font-size: 0.85rem;
+  }
+}
