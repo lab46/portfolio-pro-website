@@ -31,6 +31,7 @@ export interface ExtractedBankAccount {
   bankName?: string;
   accountName?: string;
   accountNumber?: string; // Can include BSB merged in
+  bsb?: string;
 }
 
 export interface ExtractedLine {
@@ -72,7 +73,7 @@ export interface DocumentProcessResponse {
 }
 
 // Transform camelCase frontend data to snake_case backend format
-const toSnakeCase = (data: any): any => {
+export const toSnakeCase = (data: any): any => {
   if (!data) return data;
   
   const snakeData: any = { ...data };

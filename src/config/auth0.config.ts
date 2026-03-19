@@ -25,8 +25,8 @@ export const auth0Config = {
   audience: import.meta.env.VITE_AUTH0_AUDIENCE || undefined,
   
   // Scopes to request
-  scope: 'openid profile email',
-};
+  scope: 'openid profile email read:legal_entities, write:legal_entities read:members, write:members read:bank_accounts write:bank_accounts read:assets write:assets read:transactions write:transactions read:documents write:documents read:reports read:automation_rules write:automation_rules',
+}; 
 
 // Type for Auth0 configuration
 export interface Auth0Config {

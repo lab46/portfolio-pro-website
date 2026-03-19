@@ -29,6 +29,8 @@ function transformRuleFromAPI(data: any): AutomationRule {
     id: data.id,
     categorizationRules,
     enabled: data.enabled,
+    operator: data.operator,
+    transactionType: data.transaction_type ?? data.transactionType ?? null,
     bankAccountId: data.bank_account_id,
     assetId: data.asset_id,
     assetTransactionType: data.asset_transaction_type,

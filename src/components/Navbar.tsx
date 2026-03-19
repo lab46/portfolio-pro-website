@@ -9,6 +9,7 @@ const Navbar = () => {
   const location = useLocation();
   const { isAuthenticated, isLoading, user } = useAuth0();
   const [showUserMenu, setShowUserMenu] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
   const isActive = (path: string) => location.pathname === path;
@@ -30,15 +31,34 @@ const Navbar = () => {
     };
   }, [showUserMenu]);
 
+  useEffect(() => {
+    setShowMobileMenu(false);
+  }, [location.pathname]);
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="navbar-brand">
-          Portfolio App
-        </Link>
-        
+        <div className="navbar-header-row">
+          <Link to="/" className="navbar-brand">
+            Portfolio App
+          </Link>
+
+          {isAuthenticated && (
+            <button
+              className="mobile-menu-toggle"
+              type="button"
+              onClick={() => setShowMobileMenu((value) => !value)}
+              aria-label="Toggle navigation menu"
+              aria-expanded={showMobileMenu}
+              aria-controls="mobile-nav-menu"
+            >
+              <span className="mobile-menu-icon">☰</span>
+            </button>
+          )}
+        </div>
+
         {isAuthenticated && (
-          <ul className="navbar-nav">
+          <ul className={`navbar-nav ${showMobileMenu ? 'open' : ''}`} id="mobile-nav-menu">
             <li>
               <Link to="/legal-entities" className={isActive('/legal-entities') ? 'active' : ''}>
                 Legal Entities
@@ -82,15 +102,15 @@ const Navbar = () => {
             <>
               {isAuthenticated ? (
                 <div className="user-menu-container" ref={menuRef}>
-                  <button 
-                    className="user-avatar-button" 
+                  <button
+                    className="user-avatar-button"
                     onClick={() => setShowUserMenu(!showUserMenu)}
                     aria-label="User menu"
                   >
                     {user?.picture ? (
-                      <img 
-                        src={user.picture} 
-                        alt={user.name || 'User'} 
+                      <img
+                        src={user.picture}
+                        alt={user.name || 'User'}
                         className="user-avatar"
                       />
                     ) : (
@@ -99,7 +119,7 @@ const Navbar = () => {
                       </div>
                     )}
                   </button>
-                  
+
                   {showUserMenu && (
                     <div className="user-dropdown-menu">
                       <div className="user-info-section">

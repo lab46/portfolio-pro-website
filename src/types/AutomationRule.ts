@@ -24,6 +24,7 @@ export interface AutomationRule {
   id: string;
   categorizationRules: CategorizationRules | null;
   enabled: boolean;
+  operator?: 'AND' | 'OR';
   transactionType: 'income' | 'expense' | 'internal_transfer' | 'investment' | 'withdrawal' | null;
   bankAccountId: string | null;
   assetId: string | null;
@@ -36,6 +37,7 @@ export interface AutomationRule {
 export interface AutomationRuleCreate {
   categorizationRules: CategorizationRules | null;
   enabled?: boolean;
+  operator?: 'AND' | 'OR';
   transactionType?: 'income' | 'expense' | 'internal_transfer' | 'investment' | 'withdrawal' | null;
   bankAccountId?: string | null;
   assetId?: string | null;

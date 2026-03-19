@@ -15,6 +15,7 @@ export interface BankAccount {
   accountName: string;
   accountNickName?: string;
   accountNumber: string; // Can include BSB, hyphens, and spaces
+  bsb?: string;
   accountType: 'checking' | 'savings' | 'credit' | 'investment';
   currency: string;
   isActive: boolean;

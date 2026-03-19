@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import { documentService, DocumentVerification, ExtractedTransaction } from '../services/documentService';
+import { documentService, DocumentVerification } from '../services/documentService';
 import { transactionService } from '../services/transactionService';
 import { legalEntityService } from '../services/legalEntityService';
 import { LegalEntity } from '../types/LegalEntity';
@@ -131,19 +131,6 @@ const DocumentVerificationPage: React.FC = () => {
     return transaction?.category || '';
   };
 
-  const getEditedAmount = (transactionId: string): number => {
-    const edit = transactionEdits.get(transactionId);
-    if (edit) {
-      return edit.type === 'expense' ? -Math.abs(edit.amount) : Math.abs(edit.amount);
-    }
-    return getTransactionAmount(transactionId);
-  };
-
-  const getEditedCategory = (transactionId: string): string => {
-    const edit = transactionEdits.get(transactionId);
-    return edit?.category || getTransactionCategory(transactionId);
-  };
-
   const handleApprove = async () => {
     if (!verification) return;
     
@@ -217,13 +204,6 @@ const DocumentVerificationPage: React.FC = () => {
       month: 'short',
       day: 'numeric',
     });
-  };
-
-  const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'AUD',
-    }).format(amount);
   };
 
   if (loading) {

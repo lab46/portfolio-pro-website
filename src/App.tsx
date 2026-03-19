@@ -45,6 +45,7 @@ const AppContent: React.FC = () => {
 };
 
 const App: React.FC = () => {
+  console.log('Auth0 Config:', auth0Config); // Debugging line to check config values
   return (
     <Auth0Provider
       domain={auth0Config.domain}
